@@ -4,52 +4,52 @@ const Todo = use('App/Models/Todo');
 
 class TodoController {
 
-    index asynchrone ({demande, réponse, vue}) { 
-        const todos = attendre Todo.all (); 
+    async index({request, response, view}){
+        const todos = await Todo.all();
     
-        return view.render ('index', {todos: todos.rows}) 
-    } 
+        return view.render('index', { todos: todos.rows })
+    }
     
-    create ({request, response, view}) { 
-        return view.render ('create') 
-    } 
+    create({request, response, view}){
+        return view.render('create')
+    }
     
-    async store ({request, response, view, session, session }) { 
-        const todo = new Todo (); 
+    async store({request, response, view, session}){
+        const todo = new Todo();
     
-        todo.title = request.input ('title'); 
-        todo.description = request.input ('description'); 
-        attendre todo.save (); 
+        todo.title = request.input('title');
+        todo.description = request.input('description');
+        await todo.save();
     
-        session.flash ({notification: 'Créer avec succès!'}); 
-        return response.route ('Todo.index') 
-    } 
+        session.flash({ notification: 'Successfully create!' });
+        return response.route('Todo.index')
+    }
     
-    async edit ({request, response, view, params}) { 
-        const id = params.id; 
-        const todo = attendre Todo.find (id);
+    async edit({request, response, view, params}){
+        const id = params.id;
+        const todo = await Todo.find(id);
     
-        return view.render ('edit', {todo: todo}) 
-    } 
+        return view.render('edit', { todo : todo})
+    }
     
-    mise à jour asynchrone ({request, response, view, params, session}) { 
-        const id = params.id; 
-        const todo = attendre Todo.find (id); 
-        todo.title = request.input ('title'); 
-        todo.description = request.input ('description'); 
-        attendre todo.save (); 
+    async update({request, response, view, params, session}){
+        const id = params.id;
+        const todo = await Todo.find(id);
+        todo.title = request.input('title');
+        todo.description = request.input('description');
+        await todo.save();
     
-        session.flash ({notification: 'Mise à jour réussie!'}); 
-        response.redirect ('/') 
-    } 
+        session.flash({ notification: 'Successfully update!' });
+        response.redirect('/')
+    }
     
-    async delete ({demande, réponse, vue, paramètres, session}) { 
-        const id = params.id; 
-        const todo = attendre Todo.find (id); 
-        attendre todo.delete (); 
+    async delete({request, response, view, params, session}){
+        const id = params.id;
+        const todo = await Todo.find(id);
+        await todo.delete();
     
-        session.flash ({notification: 'Suppression réussie!'}); 
-        response.redirect ('/') 
+        session.flash({ notification: 'Successfully delete!' });
+        response.redirect('/')
     }
 }
 
