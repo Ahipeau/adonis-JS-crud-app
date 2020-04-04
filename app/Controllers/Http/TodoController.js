@@ -48,7 +48,7 @@ class TodoController {
         const todo = await Todo.find(id);
         await todo.delete();
     
-        session.flash({ notification: 'Successfully delete!' });
+        session.flash({ notification: 'Suppression avec succès!' });
         response.redirect('/')
     }
 }
