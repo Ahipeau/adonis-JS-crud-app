@@ -1,13 +1,13 @@
-# AdonisJs Crud 
+# Adonis JS CRUD
 
-## How to
+## Installation
 
-Clone repository: `git clone https://github.com/Ahipeau/adonis-JS-crud-app.git`
+Référentiel de clone: `git clone https://github.com/Ahipeau/adonis-JS-crud-app.git`
 
-Enter the folder: `cd adonis-JS-crud-app`
+Entrez dans le dossier: `cd adonis-JS-crud-app`
 
-Install dependencies: `npm install`
+Installer les dépendances: `npm install`
 
-Run server: `npm run serve:dev`
+Exécutez le serveur: `npm run serve:dev`
 
-Access the url in the browser: `http://localhost:3333`
+Accédez à l'url dans le navigateur: `http://localhost:3333`
