@@ -17,3 +17,11 @@
 const Route = use('Route')
 
 Route.on('/').render('welcome')
+
+//Appel index et view de la table Todo
+Route.get ('/', 'TodoController.index'). As ('Todo.index') 
+Route.get ('/ create', 'TodoController.create'). As ('Todo.create') 
+Route.get ('/ edit /: id', 'TodoController.edit'). as ('Todo.edit') 
+Route.get ('/ delete /: id', 'TodoController.delete'). as ('Todo.delete' ) 
+Route.post ('/ store', 'TodoController.store'). As ('Todo.store') 
+Route.post ('/ update /: id', 'TodoController.update'). As ('Todo.update ')
