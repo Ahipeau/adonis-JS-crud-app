@@ -21,7 +21,7 @@ class TodoController {
         todo.description = request.input('description');
         await todo.save();
     
-        session.flash({ notification: 'Successfully create!' });
+        session.flash({ notification: 'Création avec succès!' });
         return response.route('Todo.index')
     }
     
@@ -39,7 +39,7 @@ class TodoController {
         todo.description = request.input('description');
         await todo.save();
     
-        session.flash({ notification: 'Successfully update!' });
+        session.flash({ notification: 'Modification avec succès!' });
         response.redirect('/')
     }
     
