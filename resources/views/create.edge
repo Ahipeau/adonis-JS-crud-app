@@ -1,32 +1,31 @@
-@layout('base')
-@yield('content')
+
 <!-- Main Section -->
-<section class="main-section">
+<div class="main-section">
     <!-- Add Your Content Inside -->
     <div class="content">
-        <!-- Remove This Before You Start -->
+        
+
         <div class="row">
             <div class="col-md-6">
-                <h2>Create ToDo</h2>
+                <h2>Créer</h2>
                 <form action="{{ route('Todo.store') }}" method="post">
                     {{ csrfField() }}
                     <div class="form-group">
-                        <label for="title">Title</label>
-                        <input class="form-control" type="text" name="title" placeholder="Title of Todo">
+                        <label for="title">Titre</label>
+                        <input class="form-control" type="text" name="title" placeholder="">
                     </div>
                     <div class="form-group">
                         <label for="description">Description</label>
                         <textarea class="form-control" name="description" cols="30" rows="10"></textarea>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-sm btn-success">Submit</button>
+                        <button type="submit" class="btn btn-sm btn-success">Envoyer</button>
                     </div>
                 </form>
-                <a href="{{ route('Todo.index') }}">Kembali</a>
+                <a href="{{ route('Todo.index') }}">Accueil</a>
             </div>
         </div>
     </div>
     <!-- /.content -->
 </section>
 <!-- /.main-section -->
-@endyield

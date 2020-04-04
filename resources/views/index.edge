@@ -1,13 +1,12 @@
-@layout('base')
-@yield('content')
+
 <!-- Main Section -->
 <section class="main-section">
-    <!-- Add Your Content Inside -->
+   
     <div class="container">
-        <!-- Remove This Before You Start -->
+
         <div class="row">
             <div class="col-md-12"  style="margin-top:30px;">
-                <a href="{{ route('Todo.create') }}" class="btn btn-md btn-success">Create ToDo</a>
+                <a href="{{ route('Todo.create') }}" class="btn btn-md btn-success">Créer</a>
                 @if(flashMessage('notification'))
                     <div class="alert alert-success">{{ flashMessage('notification') }}</div>
                 @endif
@@ -17,7 +16,7 @@
                     <thead>
                         <tr>
                             <td>No</td>
-                            <td>Title</td>
+                            <td>Titre</td>
                             <td>Description</td>
                             <td>Action</td>
                         </tr>
@@ -42,4 +41,3 @@
     <!-- /.content -->
 </section>
 <!-- /.main-section -->
-@endyield

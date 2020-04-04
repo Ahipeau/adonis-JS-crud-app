@@ -1,5 +1,4 @@
-@layout('base')
-@yield('content')
+
 <!-- Main Section -->
 <section class="main-section">
     <!-- Add Your Content Inside -->
@@ -7,12 +6,12 @@
         <!-- Remove This Before You Start -->
         <div class="row">
             <div class="col-md-6">
-                <h2>Create ToDo</h2>
+                <h2>Créer</h2>
                 <form action="{{ route('Todo.update', { id : todo.id} ) }}" method="post">
                     {{ csrfField() }}
                     <div class="form-group">
-                        <label for="title">Title</label>
-                        <input class="form-control" type="text" name="title" placeholder="Title of Todo"
+                        <label for="title">Titre</label>
+                        <input class="form-control" type="text" name="title" placeholder=""
                         value="{{ todo.title }}">
                     </div>
                     <div class="form-group">
@@ -20,14 +19,13 @@
                         <textarea class="form-control" name="description" cols="30" rows="10">{{ todo.description }}</textarea>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-sm btn-success">Submit</button>
+                        <button type="submit" class="btn btn-sm btn-success">Envoyer</button>
                     </div>
                 </form>
-                <a href="{{ route('Todo.index') }}">Kembali</a>
+                <a href="{{ route('Todo.index') }}">Accueil</a>
             </div>
         </div>
     </div>
     <!-- /.content -->
 </section>
 <!-- /.main-section -->
-@endyield
